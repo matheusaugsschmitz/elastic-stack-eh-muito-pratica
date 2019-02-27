@@ -1,0 +1,22 @@
+filebeat.prospectors:
+- type: log
+  enabled: true
+  paths: 
+    - /opt/elk/logs/*.log
+  fields:
+    log_type: server-log
+    input_type: filebeat
+  multiline.pattern: ^\[[0-3][0-9]
+  multiline.negate: true
+  multiline.match: after
+output.logstash:
+  enabled: true
+  hosts: ['localhost:5044'] 
+logging.level: info
+logging.selectors: ["*"]
+logging.to_files: true
+logging.files:
+  path: /var/log/filebeat
+  name: filebeat
+  keepfiles: 7
+  permissions: 0644
