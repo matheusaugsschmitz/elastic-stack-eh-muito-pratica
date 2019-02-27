@@ -40,6 +40,16 @@ Basta executar:
 $ sudo service metricbeat start
 ```
 
+## Ativando monitoramento do Docker
+```
+$ sudo metricbeat modules enable docker
+```
+
+## Ativando monitoramento da máquina onde roda o Metricbeat
+```
+$ sudo metricbeat modules enable system
+```
+
 # Executando Filebeat
 >Para instalação a própria Elastic disponibiliza um tutorial bem simples:
 >https://www.elastic.co/guide/en/beats/filebeat/current/setup-repositories.html
