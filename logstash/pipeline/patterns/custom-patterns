@@ -1,0 +1,1 @@
+SERVERLOG \[%{GREEDYDATA:data-hora}\] \[%{WORD:level}\] \[%{WORD:java_class}\] - %{DATA:mensagem}(?:$)(?m)(?:%{GREEDYDATA:stack_trace}|)
